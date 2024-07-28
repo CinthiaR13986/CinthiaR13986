@@ -1,0 +1,101 @@
+public class Color {
+	public Color () {
+		nombre = "";
+	}
+	private String nombre;
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+}
+public class TipoPintura {
+
+	public TipoPintura() {
+		// TODO Auto-generated constructor stub
+		nombre = "";
+	}
+	private String nombre;
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+}
+public class Pintura {
+
+	public Pintura() {
+		// TODO Auto-generated constructor stub
+		codigo = "";
+		color = new Color();
+		tipoPintura = new TipoPintura();
+			
+	}
+	private String codigo;
+	private Color color;
+	private TipoPintura tipoPintura;
+	public String getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
+	public Color getColor() {
+		return color;
+	}
+	public void setColor(Color color) {
+		this.color = color;
+	}
+	public TipoPintura getTipoPintura() {
+		return tipoPintura;
+	}
+	public void setTipoPintura(TipoPintura tipoPintura) {
+		this.tipoPintura = tipoPintura;
+	}
+}
+public class Empleado {
+
+	public Empleado() {
+		// TODO Auto-generated constructor stub
+	}
+	private String codigo;
+	private String nombre;
+	public String getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	public void despachar (Pintura pintura) {
+		System.out.println(" se despacho la pintura "+pintura.getCodigo()+" de color "+pintura.getColor().getNombre()+" de tipo "+pintura.getTipoPintura().getNombre());
+	}
+}
+public class Tienda {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Color color = new Color();
+		color.setNombre("purpura");
+		TipoPintura tipoPintura = new TipoPintura();
+		tipoPintura.setNombre("aceite");
+		Pintura pintura = new Pintura();
+		pintura.setCodigo("0006");
+		pintura.setColor(color);
+		pintura.setTipoPintura(tipoPintura);
+		Empleado juan = new Empleado();
+		juan.setCodigo("001");
+		juan.setNombre("Juan Perez");
+		juan.despachar(pintura);
+		}
+}
